@@ -16,8 +16,9 @@ staticTest($._("Color the winter heading"), function() {
     usedH2M = "Check your selector. You should be using a `id` selector like shown in the hint code, on the right.";
     idWithQuotesSummerM = "Make sure your id selector does not have any quotes. It should look like this:\n `#summer`";
     idWithQuotesWinterM = "Make sure your id selector does not have any quotes. It should look like this:\n `#winter`";
+    progressM = "Great job! Now, just add one more CSS rule to color the other id too.";
     
-    
+    //[todo] make progression message
     
     // --------------------------- PATTERNS ------------------------------------
     // ====================================
@@ -41,29 +42,51 @@ staticTest($._("Color the winter heading"), function() {
     var idWithQuotesWinterP = '#"winter" {}';
     
     
-    result = allPass(
-        anyPass(cssMatch(summerColorP),
-                cssMatch(summerBackgroundP),
-                cssMatch(summerBackground2P)),
-        anyPass(cssMatch(winterColorP),
-                cssMatch(winterBackgroundP),
-                cssMatch(winterBackground2P)));
+    
+    result = anyPass(cssMatch(summerColorP),
+                    cssMatch(summerBackgroundP),
+                    cssMatch(summerBackground2P),
+                    cssMatch(winterColorP),
+                    cssMatch(winterBackgroundP),
+                    cssMatch(winterBackground2P));
+            
+                            
+    bothResult = allPass(
+                    anyPass(cssMatch(summerColorP),
+                            cssMatch(summerBackgroundP),
+                            cssMatch(summerBackground2P)),
+                    anyPass(cssMatch(winterColorP),
+                            cssMatch(winterBackgroundP),
+                            cssMatch(winterBackground2P)));
     
     
     if (passes(result)) {
-        result = allPass(
-            anyPass(cssMatch(summerColorP, isValidColor("$color")),
-                    cssMatch(summerBackgroundP, isValidColor("$color")),
-                    cssMatch(summerBackground2P, isValidColor("$color"))
-                    ),
-            anyPass(cssMatch(winterColorP, isValidColor("$color")),
-                    cssMatch(winterBackgroundP, isValidColor("$color")),
-                    cssMatch(winterBackground2P, isValidColor("$color"))
-                ));
-        if (fails(result)) {
-            result = fail($._(isValidColorM));
+        
+        summerResult = anyPass(cssMatch(summerColorP, isValidColor("$color")),
+                            cssMatch(summerBackgroundP, isValidColor("$color")),
+                            cssMatch(summerBackground2P, isValidColor("$color")));
+                
+                
+        winterResult = anyPass(cssMatch(winterColorP, isValidColor("$color")),
+                            cssMatch(winterBackgroundP, isValidColor("$color")),
+                            cssMatch(winterBackground2P, isValidColor("$color")));
+        
+        if (passes(bothResult)) {
+            if (fails(summerResult) || fails(winterResult)) {
+                result = fail($._(isValidColorM));
+            }    
+        }   
+        
+        
+        else if (passes(summerResult) && fails(winterResult)) {
+            result = fail($._(progressM));
         }
-    } else if (fails(result)) {
+        
+        else if (passes(winterResult) && fails(summerResult)) {
+            result = fail($._(progressM));
+        }
+        
+    } else if (fails(bothResult)) {
         
         
         if (cssMatches(usedH2P) || cssMatches(usedH1P) || cssMatches(usedPP)) {
@@ -78,6 +101,10 @@ staticTest($._("Color the winter heading"), function() {
             result = fail($._(idWithQuotesWinterM));
         }
         
+        
+        
+        
+        // must be last to pass regression tests.
         else if (!htmlMatches(summerId) || !htmlMatches(winterId)) {
             result = fail($._(removedIdM));
         } 

@@ -83,7 +83,19 @@
 {   
     code: "<style>#\"winter\" {color: red;}</style>",
     steps: ["Make sure your id selector does not have any quotes. It should look like this:\n `#winter`"]
-}
+},
+
+
+{   
+    code: "<style>#summer {color: rgb(200, 179, 0);}</style>",
+    steps: ["Great job! Now, just add one more CSS rule to color the other id too."]
+},
+
+
+{   
+    code: "<style>#winter {color: rgb(0, 17, 255);}</style>",
+    steps: ["Great job! Now, just add one more CSS rule to color the other id too."]
+},
 
 
 
