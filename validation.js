@@ -7,7 +7,7 @@ staticTest($._("Color the winter heading"), function() {
     
     var result = null;
     var descrip = $._("This webpage describes the favorite seasons of Olaf, a sun-loving snowman. Both of the `<*h2*>`'s have `*id*`'s, but there are no CSS rules for styling them yet. Add 2 rules that color the headings.");
-    var displayP = " #_ {\n    _: _;\n }";
+    var displayP = "<style>\n  #summer {\n    _: _;\n  }\n</style>";
     
     // --------------------------- MESSAGES ------------------------------------
     // ====================================
