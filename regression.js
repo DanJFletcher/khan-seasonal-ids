@@ -57,6 +57,11 @@
 {   
     code: "<style>#summer {color: rgb(300, 179, 0);}  #winter {color: rgb(0, 17, 255);}</style>",
     steps: ["Hm, are the colors in your properties all valid? They should either be color names or valid RGB colors of the form `rgb(n, n, n)` with each number between 0 to 255."]
+},
+
+{   
+    code: "<style>h2 {color: red;}</style>",
+    steps: ["Check your selector. You should be using a `id` selector like shown in the hint code, on the right."]
 }
 
 
