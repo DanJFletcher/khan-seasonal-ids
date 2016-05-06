@@ -72,6 +72,17 @@
 {   
     code: "<style>p {color: red;}</style>",
     steps: ["Check your selector. You should be using a `id` selector like shown in the hint code, on the right."]
+},
+
+{   
+    code: "<style>#\"summer\" {color: red;}</style>",
+    steps: ["Make sure your id selector does not have any quotes. It should look like this:\n `#summer`"]
+},
+
+
+{   
+    code: "<style>#\"winter\" {color: red;}</style>",
+    steps: ["Make sure your id selector does not have any quotes. It should look like this:\n `#winter`"]
 }
 
 

@@ -14,6 +14,10 @@ staticTest($._("Color the winter heading"), function() {
     isValidColorM = "Hm, are the colors in your properties all valid? They should either be color names or valid RGB colors of the form `rgb(n, n, n)` with each number between 0 to 255.";
     removedIdM = "Hm, did you remove the summer/winter ids in the HTML or change their spelling? Please keep them the same, that helps us grade this challenge!";
     usedH2M = "Check your selector. You should be using a `id` selector like shown in the hint code, on the right.";
+    idWithQuotesSummerM = "Make sure your id selector does not have any quotes. It should look like this:\n `#summer`";
+    idWithQuotesWinterM = "Make sure your id selector does not have any quotes. It should look like this:\n `#winter`";
+    
+    
     
     // --------------------------- PATTERNS ------------------------------------
     // ====================================
@@ -32,6 +36,9 @@ staticTest($._("Color the winter heading"), function() {
     var usedH2P = "h2 {}";
     var usedH1P = "h1 {}";
     var usedPP = "p {}";
+    
+    var idWithQuotesSummerP = '#"summer" {}';
+    var idWithQuotesWinterP = '#"winter" {}';
     
     
     result = allPass(
@@ -61,6 +68,14 @@ staticTest($._("Color the winter heading"), function() {
         
         if (cssMatches(usedH2P) || cssMatches(usedH1P) || cssMatches(usedPP)) {
             result = fail($._(usedH2M));
+        }
+        
+        else if (cssMatches(idWithQuotesSummerP)) {
+            result = fail($._(idWithQuotesSummerM));
+        }
+        
+        else if (cssMatches(idWithQuotesWinterP)) {
+            result = fail($._(idWithQuotesWinterM));
         }
         
         else if (!htmlMatches(summerId) || !htmlMatches(winterId)) {
