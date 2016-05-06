@@ -30,6 +30,8 @@ staticTest($._("Color the winter heading"), function() {
     var winterId = "[id=winter]";
     
     var usedH2P = "h2 {}";
+    var usedH1P = "h1 {}";
+    var usedPP = "p {}";
     
     
     result = allPass(
@@ -57,7 +59,7 @@ staticTest($._("Color the winter heading"), function() {
     } else if (fails(result)) {
         
         
-        if (cssMatches(usedH2P)) {
+        if (cssMatches(usedH2P) || cssMatches(usedH1P) || cssMatches(usedPP)) {
             result = fail($._(usedH2M));
         }
         
