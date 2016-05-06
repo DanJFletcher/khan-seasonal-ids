@@ -55,13 +55,15 @@ staticTest($._("Color the winter heading"), function() {
             result = fail($._(isValidColorM));
         }
     } else if (fails(result)) {
-        if (!htmlMatches(summerId) || !htmlMatches(winterId)) {
-            result = fail($._(removedIdM));
-        } 
         
-        else if (cssMatches(usedH2P)) {
+        
+        if (cssMatches(usedH2P)) {
             result = fail($._(usedH2M));
         }
+        
+        else if (!htmlMatches(summerId) || !htmlMatches(winterId)) {
+            result = fail($._(removedIdM));
+        } 
     }
     
     assertMatch(result, descrip, displayP);
