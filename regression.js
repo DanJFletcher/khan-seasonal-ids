@@ -61,12 +61,12 @@
 
 {   
     code: "<style>h2 {color: red;}</style>",
-    steps: ["Check your selector. You should be using a `id` selector like shown in the hint code, on the right."]
+    steps: ["Check your selector. You should be using an `id` selector like shown in the hint code, on the right."]
 },
 
 {   
     code: "<style>h1 {color: red;}</style>",
-    steps: ["Check your selector. You should be using a `id` selector like shown in the hint code, on the right."]
+    steps: ["Check your selector. You should be using an `id` selector like shown in the hint code, on the right."]
 },
 
 {   
