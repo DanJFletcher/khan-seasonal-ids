@@ -88,13 +88,13 @@
 
 {   
     code: "<style>#summer {color: rgb(200, 179, 0);}</style>",
-    steps: ["Great job! Now, just add one more CSS rule to color the other id too."]
+    steps: ["Now, add one more CSS rule to color the other element with the id."]
 },
 
 
 {   
     code: "<style>#winter {color: rgb(0, 17, 255);}</style>",
-    steps: ["Now, add one more CSS rule to color the other element with the \"winter\" id."]
+    steps: ["Now, add one more CSS rule to color the other element with the id."]
 },
 
 

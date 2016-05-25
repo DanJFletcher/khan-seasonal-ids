@@ -16,7 +16,7 @@ staticTest($._("Color the winter heading"), function() {
     usedH2M = "Check your selector. You should be using an `id` selector like shown in the hint code, on the right.";
     idWithQuotesSummerM = "Make sure your id selector does not have any quotes.";
     idWithQuotesWinterM = "Make sure your id selector does not have any quotes.";
-    progressM = "Now, add one more CSS rule to color the other element with the \"winter\" id.";
+    progressM = "Now, add one more CSS rule to color the other element with the id.";
     
     //[todo] make progression message
     
