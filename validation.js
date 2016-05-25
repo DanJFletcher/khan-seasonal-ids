@@ -14,9 +14,9 @@ staticTest($._("Color the winter heading"), function() {
     isValidColorM = "Hm, are the colors in your properties all valid? They should either be color names or valid RGB colors of the form `rgb(n, n, n)` with each number between 0 to 255.";
     removedIdM = "Hm, did you remove the summer/winter ids in the HTML or change their spelling? Please keep them the same, that helps us grade this challenge!";
     usedH2M = "Check your selector. You should be using an `id` selector like shown in the hint code, on the right.";
-    idWithQuotesSummerM = "Make sure your id selector does not have any quotes. It should look like this:\n `#summer`";
-    idWithQuotesWinterM = "Make sure your id selector does not have any quotes. It should look like this:\n `#winter`";
-    progressM = "Great job! Now, just add one more CSS rule to color the other id too.";
+    idWithQuotesSummerM = "Make sure your id selector does not have any quotes.";
+    idWithQuotesWinterM = "Make sure your id selector does not have any quotes.";
+    progressM = "Now, add one more CSS rule to color the other element with the \"winter\" id.";
     
     //[todo] make progression message
     
