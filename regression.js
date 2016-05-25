@@ -71,7 +71,7 @@
 
 {   
     code: "<style>p {color: red;}</style>",
-    steps: ["Check your selector. You should be using a `id` selector like shown in the hint code, on the right."]
+    steps: ["Check your selector. You should be using an `id` selector like shown in the hint code, on the right."]
 },
 
 {   
